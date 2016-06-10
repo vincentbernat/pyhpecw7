@@ -131,6 +131,6 @@ class Neighbors(object):
                 if obj is not None:
                     value = obj.text
                     temp[new_key] = value
-                    return_neigh.append(temp)
+            return_neigh.append(temp)
 
         return return_neigh
