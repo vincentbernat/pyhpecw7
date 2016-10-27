@@ -123,14 +123,14 @@ class Neighbors(object):
 
         for neigh in neighbors:
             temp = {}
-            index = find_in_data('IfIndex', nc_reply).text
+            index = find_in_data('IfIndex', neigh).text
             interface = self._get_interface_from_index(index)
             temp['local_intf'] = interface
             for new_key, xml_tag in key_map.iteritems():
-                obj = find_in_data(xml_tag, nc_reply)
+                obj = find_in_data(xml_tag, neigh)
                 if obj is not None:
                     value = obj.text
                     temp[new_key] = value
-                    return_neigh.append(temp)
+            return_neigh.append(temp)
 
         return return_neigh
