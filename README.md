@@ -194,3 +194,5 @@ True
 # Detailed Docs
 The detailed documentation for the library can be found [here](http://pyhpecw7.readthedocs.org/en/latest/index.html#)
 
+Support
+
