@@ -44,7 +44,8 @@ class Facts(object):
                     'os': '7.1.045 Release 2418P01',
                     'serial_number': 'CN43G9800T',
                     'uptime': '6d 23hr 25min 18sec',
-                    'vendor': 'hp'
+                    'vendor': 'hp',
+                    'hardware': 'Ver.A'
                 }
         """
 
@@ -95,7 +96,8 @@ class Facts(object):
         key_map = {
             'os': 'SoftwareRev',
             'serial_number': 'SerialNum',
-            'model': 'ModelName'
+            'model': 'ModelName',
+            'hardware': 'HardwareRev'
         }
 
         E = self.em
@@ -105,6 +107,8 @@ class Facts(object):
                     E.SoftwareRev(),
                     E.SerialNum(),
                     E.ModelName(),
+                    E.HardwareRev(),
+
                 )
             )
         )
