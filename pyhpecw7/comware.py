@@ -17,7 +17,7 @@ import socket
 from lxml import etree
 from pyhpecw7.utils.xml.namespaces import NETCONFBASE_C
 from pyhpecw7.errors import NCTimeoutError, ConnectionClosedError, NCError,\
-    ConnectionAuthenticationError, ConnectionSSHError, ConnectionUknownHostError,\
+    ConnectionAuthenticationError, ConnectionSSHError, ConnectionUnkownHostError,\
     ConnectionError, LockConflictError, UnlockConflictError
 
 
@@ -81,7 +81,7 @@ class HPCOM7(object):
                 to the device.
             ConnectionSSHError: if NETCONF isn't enabled on the device, or the
                 device isn't reachable
-            ConnectionUknownHostError: if the device's network name cannot
+            ConnectionUnkownHostError: if the device's network name cannot
                 be resolved to an IP address.
             ConnectionError: if an unkown error occurs during connection
         """
@@ -106,7 +106,7 @@ class HPCOM7(object):
                 ' The NETCONF server may be down or refused the connection.'
                 ' The connection may have timed out if the server wasn\'t reachable.')
         except socket.gaierror:
-            raise ConnectionUknownHostError(self)
+            raise ConnectionUnkownHostError(self)
         except ImportError:
             raise ImportError('ncclient does not have the comware extensions')
         except Exception:
