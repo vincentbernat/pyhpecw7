@@ -106,7 +106,7 @@ Let's create a new VLAN object.
 Now add VLAN 20.  To do this we'll use the `build` method.
 
 ```
->>> vlan.build()
+>>> vlan.build(stage=True)
 True
 ```
 
@@ -115,7 +115,7 @@ When `True` is returned, it means that the config object that will be pushed has
 The next step is to execute the change.
 
 ```
->>> response = device.execute()
+>>> response = device.execute_staged()
 >>> 
 >>> vlan.get_config()
 {'name': 'VLAN 0020', 'vlanid': '20', 'descr': 'VLAN 0020'}
@@ -127,10 +127,10 @@ Setting the vlan name or description could easily be sent in as additional key v
 ```
 >>> args = dict(name='NEWV20', descr='DESCR_20')
 >>> 
->>> vlan.build(**args)
+>>> vlan.build(stage=True, **args)
 True
 >>> 
->>> rsp = device.execute()
+>>> rsp = device.execute_staged()
 >>> 
 >>> vlan.get_config()
 {'name': 'NEWV20', 'vlanid': '20', 'descr': 'DESCR_20'}
@@ -141,10 +141,10 @@ True
 To remove the VLAN, the `remove` method is used.
 
 ```
->>> vlan.remove()
+>>> vlan.remove(stage=True)
 True
 >>> 
->>> rsp = device.execute()
+>>> rsp = device.execute_staged()
 >>> 
 >>> vlan.get_config()
 {}
@@ -166,10 +166,10 @@ True
 ### DEFAULT AN INTERFACE
 
 ```
->>> interface.default()
+>>> interface.default(stage=True)
 True
 >>> 
->>> response = device.execute()
+>>> response = device.execute_staged()
 >>> 
 >>> interface.get_config()
 {'admin': 'up', 'duplex': 'auto', 'speed': 'auto', 'description': 'FortyGigE1/0/4 Interface', 'type': 'switched'}
@@ -179,10 +179,10 @@ True
 ### CONFIGURE AN INTERFACE
 
 ```
->>> interface.build(admin='down', description='TEST_DESCR')
+>>> interface.build(stage=True, admin='down', description='TEST_DESCR')
 True
 >>> 
->>> rsp = device.execute()
+>>> rsp = device.execute_staged()
 >>> 
 >>> interface.get_config()
 {'admin': 'down', 'duplex': 'auto', 'speed': 'auto', 'description': 'TEST_DESCR', 'type': 'switched'}

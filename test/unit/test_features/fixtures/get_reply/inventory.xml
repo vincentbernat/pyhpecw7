@@ -4,6 +4,7 @@
         <top xmlns="http://www.hp.com/netconf/data:1.0">
             <LLDP>
                 <Inventory>
+                    <HardwareRev>Ver.A</HardwareRev>
                     <SoftwareRev>7.1.045 ESS 2415</SoftwareRev>
                     <SerialNum>CN43G9800T</SerialNum>
                     <ModelName>HP FF 5930-32QSFP+ Switch</ModelName>
