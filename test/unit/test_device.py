@@ -5,7 +5,7 @@ from lxml import etree
 from ncclient.operations.rpc import RPCReply
 
 from pyhpecw7.comware import HPCOM7, NCTimeoutError, ConnectionClosedError, NCError,\
-    ConnectionAuthenticationError, ConnectionSSHError, ConnectionUknownHostError,\
+    ConnectionAuthenticationError, ConnectionSSHError, ConnectionUnkownHostError,\
     ConnectionError, LockConflictError, UnlockConflictError, NcTransErrors, NcOpErrors, RPCError,\
     socket
 
@@ -55,7 +55,7 @@ class HPCOM7TestCase(unittest.TestCase):
     @mock.patch('pyhpecw7.comware.manager', autospec=True)
     def test_open_dns_error(self, mock_manager):
         mock_manager.connect.side_effect = socket.gaierror
-        with self.assertRaises(ConnectionUknownHostError):
+        with self.assertRaises(ConnectionUnkownHostError):
             self.device.open()
 
     @mock.patch('pyhpecw7.comware.manager', autospec=True)

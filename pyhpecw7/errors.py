@@ -133,7 +133,7 @@ class ConnectionSSHError(ConnectionError):
     pass
 
 
-class ConnectionUknownHostError(ConnectionError):
+class ConnectionUnkownHostError(ConnectionError):
     """When there's an uknown host error.
     """
     pass
