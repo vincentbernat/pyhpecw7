@@ -35,6 +35,8 @@ class HPCOM7(object):
             used on the switch.  Default is 830.
         timeout: OPTIONAL - How long a single RPC rquest should wait
             before timing out.
+        ssh_config: OPTIONAL - enables parsing of a OpenSSH configuration
+            file, either file in string, or defaults to ~/.ssh/config if True
 
     Attributes:
         staged: Dictionary that stores XML objects prior to being sent to
@@ -55,6 +57,7 @@ class HPCOM7(object):
         self.password = kvargs.get('password')
         self.port = kvargs.get('port') or 830
         self.timeout = kvargs.get('timeout') or 30
+        self.ssh_config = kvargs.get('ssh_config', False)
         self.staged = []
 
         self._locked = False
@@ -96,7 +99,8 @@ class HPCOM7(object):
                                               hostkey_verify=hostkey_verify,
                                               allow_agent=allow_agent,
                                               look_for_keys=look_for_keys,
-                                              timeout=self.timeout)
+                                              timeout=self.timeout,
+                                              ssh_config=self.ssh_config)
 
         except NcTransErrors.AuthenticationError:
             raise ConnectionAuthenticationError(self)
