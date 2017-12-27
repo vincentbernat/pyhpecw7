@@ -129,7 +129,7 @@ class Interface(object):
     def _get_number(self, if_name):
         digits = ''
         for char in if_name:
-            if char.isdigit() or char == '/':
+            if char.isdigit() or char == '/' or char == ':':
                 digits += char
         return digits
 
