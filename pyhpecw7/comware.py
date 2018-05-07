@@ -17,7 +17,7 @@ import socket
 from lxml import etree
 from pyhpecw7.utils.xml.namespaces import NETCONFBASE_C
 from pyhpecw7.errors import NCTimeoutError, ConnectionClosedError, NCError,\
-    ConnectionAuthenticationError, ConnectionSSHError, ConnectionUknownHostError,\
+    ConnectionAuthenticationError, ConnectionSSHError, ConnectionUnkownHostError,\
     ConnectionError, LockConflictError, UnlockConflictError
 
 
@@ -35,6 +35,8 @@ class HPCOM7(object):
             used on the switch.  Default is 830.
         timeout: OPTIONAL - How long a single RPC rquest should wait
             before timing out.
+        ssh_config: OPTIONAL - enables parsing of a OpenSSH configuration
+            file, either file in string, or defaults to ~/.ssh/config if True
 
     Attributes:
         staged: Dictionary that stores XML objects prior to being sent to
@@ -55,6 +57,7 @@ class HPCOM7(object):
         self.password = kvargs.get('password')
         self.port = kvargs.get('port') or 830
         self.timeout = kvargs.get('timeout') or 30
+        self.ssh_config = kvargs.get('ssh_config', False)
         self.staged = []
 
         self._locked = False
@@ -81,7 +84,7 @@ class HPCOM7(object):
                 to the device.
             ConnectionSSHError: if NETCONF isn't enabled on the device, or the
                 device isn't reachable
-            ConnectionUknownHostError: if the device's network name cannot
+            ConnectionUnkownHostError: if the device's network name cannot
                 be resolved to an IP address.
             ConnectionError: if an unkown error occurs during connection
         """
@@ -96,7 +99,8 @@ class HPCOM7(object):
                                               hostkey_verify=hostkey_verify,
                                               allow_agent=allow_agent,
                                               look_for_keys=look_for_keys,
-                                              timeout=self.timeout)
+                                              timeout=self.timeout,
+                                              ssh_config=self.ssh_config)
 
         except NcTransErrors.AuthenticationError:
             raise ConnectionAuthenticationError(self)
@@ -106,7 +110,7 @@ class HPCOM7(object):
                 ' The NETCONF server may be down or refused the connection.'
                 ' The connection may have timed out if the server wasn\'t reachable.')
         except socket.gaierror:
-            raise ConnectionUknownHostError(self)
+            raise ConnectionUnkownHostError(self)
         except ImportError:
             raise ImportError('ncclient does not have the comware extensions')
         except Exception:

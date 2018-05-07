@@ -47,9 +47,9 @@ ConnectionError	C:\Users\kabelj\Documents\GitHub\pyhpecw7\test\unit\test_device.
 ConnectionSSHError	C:\Users\kabelj\Documents\GitHub\pyhpecw7\pyhpecw7\comware.py	/^    ConnectionError, LockConflictError, UnlockConflictError$/;"	kind:namespace	line:21
 ConnectionSSHError	C:\Users\kabelj\Documents\GitHub\pyhpecw7\pyhpecw7\errors.py	/^class ConnectionSSHError(ConnectionError):$/;"	kind:class	line:130
 ConnectionSSHError	C:\Users\kabelj\Documents\GitHub\pyhpecw7\test\unit\test_device.py	/^    socket$/;"	kind:namespace	line:10
-ConnectionUknownHostError	C:\Users\kabelj\Documents\GitHub\pyhpecw7\pyhpecw7\comware.py	/^    ConnectionError, LockConflictError, UnlockConflictError$/;"	kind:namespace	line:21
-ConnectionUknownHostError	C:\Users\kabelj\Documents\GitHub\pyhpecw7\pyhpecw7\errors.py	/^class ConnectionUknownHostError(ConnectionError):$/;"	kind:class	line:136
-ConnectionUknownHostError	C:\Users\kabelj\Documents\GitHub\pyhpecw7\test\unit\test_device.py	/^    socket$/;"	kind:namespace	line:10
+ConnectionUnkownHostError	C:\Users\kabelj\Documents\GitHub\pyhpecw7\pyhpecw7\comware.py	/^    ConnectionError, LockConflictError, UnlockConflictError$/;"	kind:namespace	line:21
+ConnectionUnkownHostError	C:\Users\kabelj\Documents\GitHub\pyhpecw7\pyhpecw7\errors.py	/^class ConnectionUnkownHostError(ConnectionError):$/;"	kind:class	line:136
+ConnectionUnkownHostError	C:\Users\kabelj\Documents\GitHub\pyhpecw7\test\unit\test_device.py	/^    socket$/;"	kind:namespace	line:10
 ETH_IFACE	C:\Users\kabelj\Documents\GitHub\pyhpecw7\test\unit\test_features\test_interface.py	/^ETH_IFACE = 'FortyGigE1\/0\/3'$/;"	kind:variable	line:11
 ElementMaker	C:\Users\kabelj\Documents\GitHub\pyhpecw7\pyhpecw7\utils\xml\lib.py	/^from lxml.builder import ElementMaker$/;"	kind:namespace	line:5
 FILENAME	C:\Users\kabelj\Documents\GitHub\pyhpecw7\test\unit\test_features\test_config.py	/^FILENAME = '\/path\/to\/file.cfg'$/;"	kind:variable	line:8
