@@ -57,7 +57,7 @@ class HPCOM7(object):
         self.password = kvargs.get('password')
         self.port = kvargs.get('port') or 830
         self.timeout = kvargs.get('timeout') or 30
-        self.ssh_config = kvargs.get('ssh_config', False)
+        self.ssh_config = kvargs.get('ssh_config', None)
         self.staged = []
 
         self._locked = False
