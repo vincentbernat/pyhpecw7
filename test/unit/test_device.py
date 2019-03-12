@@ -36,6 +36,7 @@ class HPCOM7TestCase(unittest.TestCase):
                                                 look_for_keys=False,
                                                 password='pass',
                                                 port=830,
+                                                ssh_config=None,
                                                 timeout=30,
                                                 username='user')
 
