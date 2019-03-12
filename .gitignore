@@ -1,2 +1,7 @@
 .idea/*
 *.pyc
+/tags
+/.coverage
+/.tox/
+/htmlcov/
+/*.egg-info/
