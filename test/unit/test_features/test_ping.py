@@ -3,11 +3,13 @@ import mock
 
 from pyhpecw7.features.ping import Ping
 from pyhpecw7.features.errors import InvalidIPAddress
-from base_feature_test import BaseFeatureCase
+from .base_feature_test import BaseFeatureCase
 
 TARGET = '8.8.8.8'
 
 class PingTestCase(BaseFeatureCase):
+
+    maxDiff = None
 
     @mock.patch('pyhpecw7.comware.HPCOM7')
     def setUp(self, mock_device):

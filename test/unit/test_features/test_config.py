@@ -3,7 +3,7 @@ import mock
 import os
 
 from pyhpecw7.features.config import Config
-from base_feature_test import BaseFeatureCase
+from .base_feature_test import BaseFeatureCase
 
 FILENAME = '/path/to/file.cfg'
 BASENAME = os.path.basename(FILENAME)

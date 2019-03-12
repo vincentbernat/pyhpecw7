@@ -4,7 +4,7 @@ import mock
 from pyhpecw7.features.interface import Interface
 from pyhpecw7.features.errors import InterfaceParamsError, InterfaceAbsentError, InterfaceTypeError
 
-from base_feature_test import BaseFeatureCase
+from .base_feature_test import BaseFeatureCase
 
 IFACE_INDEX = '11'
 LOGICAL_IFACE = 'LoopBack30'

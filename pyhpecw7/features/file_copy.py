@@ -159,7 +159,7 @@ class FileCopy(object):
 
 
         nc_get_reply = self.device.action(top)
-        reply_ele = etree.fromstring(nc_get_reply.xml)
+        reply_ele = etree.fromstring(nc_get_reply.xml.encode('ascii'))
         md5sum = find_in_action('md5sum', reply_ele)
 
         if md5sum is not None:
@@ -194,7 +194,7 @@ class FileCopy(object):
 
         nc_get_reply = self.device.get(('subtree', top))
 
-        reply_ele = etree.fromstring(nc_get_reply.xml)
+        reply_ele = etree.fromstring(nc_get_reply.xml.encode('ascii'))
         is_dir = find_in_data('IsDirectory', reply_ele)
 
         if is_dir is not None\
@@ -225,7 +225,7 @@ class FileCopy(object):
         )
 
         nc_get_reply = self.device.action(top)
-        reply_ele = etree.fromstring(nc_get_reply.xml)
+        reply_ele = etree.fromstring(nc_get_reply.xml.encode('ascii'))
 
         self.remote_dir_exists = True
 

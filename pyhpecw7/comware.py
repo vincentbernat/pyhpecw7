@@ -387,7 +387,7 @@ class HPCOM7(object):
 
         """
         rsp = self.execute(self.connection.cli_config, [command])
-        xml_obj = etree.fromstring(rsp.xml)
+        xml_obj = etree.fromstring(rsp.xml.encode('ascii'))
         return self._extract_config(xml_obj)
 
     def reboot(self):

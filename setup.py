@@ -9,7 +9,6 @@ setup(
   author='HPE',
   license='Apache2',
   url='https://github.com/hpenetworking/pyhpecw7',
-  download_url='https://github.com/hpenetworking/pyhpecw7/tarball/0.0.9',
   classifiers=[
         # How mature is this project? Common values are
         #   3 - Alpha
@@ -31,7 +30,7 @@ setup(
 
   package_data={'pyhpecw7': ['utils/templates/textfsm_temps/*.tmpl']},
   install_requires=[
-      'gtextfsm==0.2.1',
+      'textfsm>=0.2.1',
       'lxml',
       'ncclient',
       'scp',

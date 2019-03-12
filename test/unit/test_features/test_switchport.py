@@ -3,7 +3,7 @@ import mock
 
 from pyhpecw7.features.switchport import Switchport
 
-from base_feature_test import BaseFeatureCase
+from .base_feature_test import BaseFeatureCase
 
 IFACE_INDEX = '9'
 IFACE_NAME = 'FortyGigE1/0/3'

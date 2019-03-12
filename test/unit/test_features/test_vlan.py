@@ -6,7 +6,7 @@ from ncclient.operations.retrieve import GetReply
 from pyhpecw7.features.vlan import Vlan
 from pyhpecw7.features.errors import VlanIDError, LengthOfStringError
 
-from base_feature_test import BaseFeatureCase
+from .base_feature_test import BaseFeatureCase
 
 class VlanTestCase(BaseFeatureCase):
 

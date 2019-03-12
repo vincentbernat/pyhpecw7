@@ -1,10 +1,14 @@
 import unittest
 import mock
-import __builtin__
 from tempfile import NamedTemporaryFile
 
+try:
+    import __builtin__
+except ImportError:
+    import builtins as __builtin__
+
 from pyhpecw7.features.file_copy import FileCopy, FileNotEnoughSpaceError, FileNotReadableError, FileHashMismatchError, FileTransferError, NCError
-from base_feature_test import BaseFeatureCase
+from .base_feature_test import BaseFeatureCase
 
 SOURCE_FILE = '/path/to/source/file.txt'
 
@@ -110,7 +114,7 @@ class FileCopyTestCase(BaseFeatureCase):
         test_file = NamedTemporaryFile()
         self.file_copy.src = test_file.name
 
-        test_file.write('Test content.')
+        test_file.write('Test content.'.encode('ascii'))
         test_file.flush()
 
         result = self.file_copy._get_local_md5()

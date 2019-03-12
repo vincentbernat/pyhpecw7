@@ -5,7 +5,7 @@ from lxml import etree
 from pyhpecw7.features.ipinterface import V4, V6, IpInterface
 from pyhpecw7.features.errors import IpIfaceMissingData
 
-from base_feature_test import BaseFeatureCase
+from .base_feature_test import BaseFeatureCase
 
 IFACE_INDEX = '9'
 

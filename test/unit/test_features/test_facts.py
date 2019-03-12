@@ -5,7 +5,7 @@ import collections
 from ncclient.operations.retrieve import GetReply
 from pyhpecw7.features.facts import Facts
 
-from base_feature_test import BaseFeatureCase
+from .base_feature_test import BaseFeatureCase
 
 class FactsTestCase(BaseFeatureCase):
 

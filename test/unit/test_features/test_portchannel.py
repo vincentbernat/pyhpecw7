@@ -2,7 +2,7 @@ import unittest
 import mock
 
 from pyhpecw7.features.portchannel import Portchannel, InvalidPortType, AggregationGroupError
-from base_feature_test import BaseFeatureCase
+from .base_feature_test import BaseFeatureCase
 
 R_GROUP_ID = '101'
 B_GROUP_ID = '100'

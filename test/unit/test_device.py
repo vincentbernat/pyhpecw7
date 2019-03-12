@@ -128,7 +128,7 @@ class HPCOM7TestCase(unittest.TestCase):
         self.device.stage_config('display run', 'cli_display')
 
         result = self.device.staged_to_string()
-        self.assertEqual(result, ['<top/>', 'display run'])
+        self.assertEqual(result, [b'<top/>', 'display run'])
 
     def test_execute_connection_closed(self):
         self.device.connection.connected = False

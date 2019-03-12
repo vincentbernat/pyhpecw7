@@ -103,7 +103,7 @@ class Ping(object):
         """Builds dictionary from XML response coming from device
         """
         as_string = response.xml
-        as_xml = etree.fromstring(as_string)
+        as_xml = etree.fromstring(as_string.encode('ascii'))
 
         key_map = {
             'payload_length': 'PayloadLength',
@@ -118,10 +118,10 @@ class Ping(object):
         }
 
         def _get_time(time):
-            return str(int(find_in_action('ReplyTime', time).text) / 1000)
+            return str(int(find_in_action('ReplyTime', time).text) // 1000)
 
         ping_response = {}
-        for new_key, xml_tag in key_map.iteritems():
+        for new_key, xml_tag in key_map.items():
             value = ''
             if new_key in ['min', 'avg', 'max']:
                 value = _get_time(as_xml)

@@ -2,7 +2,7 @@ import unittest
 import mock
 
 from pyhpecw7.features.l2vpn import L2VPN
-from base_feature_test import BaseFeatureCase
+from .base_feature_test import BaseFeatureCase
 
 class L2VPNTestCase(BaseFeatureCase):
 

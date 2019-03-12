@@ -2,7 +2,7 @@ import unittest
 import mock
 
 from pyhpecw7.features.irf import IrfPort, IrfMember, InterfaceAbsentError, IRFMemberDoesntExistError
-from base_feature_test import BaseFeatureCase
+from .base_feature_test import BaseFeatureCase
 
 class IrfTestCase(BaseFeatureCase):
 

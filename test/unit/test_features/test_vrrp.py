@@ -2,7 +2,7 @@ import unittest
 import mock
 
 from pyhpecw7.features.vrrp import VRRP
-from base_feature_test import BaseFeatureCase
+from .base_feature_test import BaseFeatureCase
 
 IFACE_NAME = 'vlan100'
 VRID = '100'

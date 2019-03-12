@@ -60,7 +60,7 @@ class Portchannel(object):
             lacp_edge='LacpEdgeEnable'
             )
         self.R_PORTCHANNEL = dict(reversed(
-            item) for item in self.PORTCHANNEL.iteritems())
+            item) for item in self.PORTCHANNEL.items())
         self.value_map = {
             'LinkMode': {
                 '1': 'static',
@@ -79,7 +79,7 @@ class Portchannel(object):
             enabled='LacpEnable',
             lacp_mode='LacpMode',
             )
-        self.R_LACP = dict(reversed(item) for item in self.LACP.iteritems())
+        self.R_LACP = dict(reversed(item) for item in self.LACP.items())
         self.lacp_value_map = {
             'LacpMode': {
                 '1': 'active',
@@ -290,7 +290,11 @@ class Portchannel(object):
 
         """
 
-        hex_value = base64.b64decode(bitmap).encode('hex')
+        decoded = base64.b64decode(bitmap)
+        if isinstance(decoded, str):
+            hex_value = decoded.encode('hex')
+        else:
+            hex_value = decoded.hex()
         h_size = len(hex_value) * 4
         binary_value = (bin(int(hex_value, 16))[2:]).zfill(h_size)
         members_by_index = []

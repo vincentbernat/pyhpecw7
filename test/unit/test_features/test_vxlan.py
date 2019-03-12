@@ -2,7 +2,7 @@ import unittest
 import mock
 
 from pyhpecw7.features.vxlan import Vxlan, Tunnel, L2EthService
-from base_feature_test import BaseFeatureCase
+from .base_feature_test import BaseFeatureCase
 
 INTERFACE = 'FortyGigE1/0/2'
 INSTANCE = '100'

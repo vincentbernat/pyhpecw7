@@ -3,7 +3,7 @@ import mock
 
 from pyhpecw7.features.reboot import Reboot, RebootDateError, RebootTimeError
 
-from base_feature_test import BaseFeatureCase
+from .base_feature_test import BaseFeatureCase
 
 class RebootTestCase(BaseFeatureCase):
 

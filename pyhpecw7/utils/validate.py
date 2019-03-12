@@ -1,4 +1,4 @@
-from network import ipaddr
+from .network import ipaddr
 
 
 def valid_ip_network(network):

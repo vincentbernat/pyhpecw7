@@ -648,7 +648,7 @@ class L2EthService(object):
         if operation == 'merge':
 
             REVERSE_RV_KEY_MAP = dict(reversed(
-                item) for item in self.RV_KEY_MAP.iteritems())
+                item) for item in self.RV_KEY_MAP.items())
 
             REVERSE_RV_VALUE_MAP = reverse_value_map(
                 REVERSE_RV_KEY_MAP, self.RV_VALUE_MAP)

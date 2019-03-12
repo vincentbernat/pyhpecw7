@@ -126,7 +126,7 @@ class Neighbors(object):
             index = find_in_data('IfIndex', neigh).text
             interface = self._get_interface_from_index(index)
             temp['local_intf'] = interface
-            for new_key, xml_tag in key_map.iteritems():
+            for new_key, xml_tag in key_map.items():
                 obj = find_in_data(xml_tag, neigh)
                 if obj is not None:
                     value = obj.text

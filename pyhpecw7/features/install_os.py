@@ -68,8 +68,8 @@ class InstallOs(object):
             image_iter = boot_list.iterfind(
                 './/{0}{1}'.format(HPDATA_C, 'FileName'))
             try:
-                boot_file = image_iter.next().text
-                sys_file = image_iter.next().text
+                boot_file = next(image_iter).text
+                sys_file = next(image_iter).text
             except StopIteration:
                 continue
 

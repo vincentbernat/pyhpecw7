@@ -72,7 +72,7 @@ class Interface(object):
         self._iface_index_name = 'IfIndex'
 
         # usd in conjunction with key map and value map above
-        self._r_key_map = dict(reversed(item) for item in self._key_map.iteritems())
+        self._r_key_map = dict(reversed(item) for item in self._key_map.items())
         self._r_value_map = reverse_value_map(self._r_key_map, self._value_map)
 
         # connect to the device and get more information

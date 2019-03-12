@@ -93,7 +93,7 @@ def elem_to_dict(elem, ns, key_map, value_map={}):
         The desired dictionary.
     """
     to_dict = {}
-    for k, v in key_map.iteritems():
+    for k, v in key_map.items():
         field = elem.find('.//{0}{1}'.format(ns, v))
         if field is not None:
             text = field.text
@@ -111,9 +111,9 @@ def reverse_value_map(key_map, value_map):
     "reverse" value map from a given key map and value map.
     """
     r_value_map = {}
-    for k, v in value_map.iteritems():
+    for k, v in value_map.items():
         sub_values = r_value_map[key_map[k]] = {}
-        for k2, v2 in v.iteritems():
+        for k2, v2 in v.items():
             sub_values[v2] = k2
 
     return r_value_map

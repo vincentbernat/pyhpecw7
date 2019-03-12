@@ -2,7 +2,7 @@ import unittest
 import mock
 
 from pyhpecw7.features.neighbor import Neighbors
-from base_feature_test import BaseFeatureCase
+from .base_feature_test import BaseFeatureCase
 
 
 class NeighborTestCase(BaseFeatureCase):
