@@ -24,8 +24,8 @@ class IrfTestCase(BaseFeatureCase):
 
         ]
 
-        down_ifaces = ['FortyGigE1/0/2', 'FortyGigE1/0/1', 'FortyGigE1/0/3', 'FortyGigE1/0/4']
-        up_ifaces = ['FortyGigE1/0/1', 'FortyGigE1/0/2', 'FortyGigE1/0/3', 'FortyGigE1/0/4']
+        down_ifaces = set(['FortyGigE1/0/2', 'FortyGigE1/0/1', 'FortyGigE1/0/3', 'FortyGigE1/0/4'])
+        up_ifaces = set(['FortyGigE1/0/1', 'FortyGigE1/0/2', 'FortyGigE1/0/3', 'FortyGigE1/0/4'])
 
         self.irf_port.build('1', [], [], ['FortyGigE1/0/1', 'FortyGigE1/0/2'], ['FortyGigE1/0/3', 'FortyGigE1/0/4'])
 
@@ -44,8 +44,8 @@ class IrfTestCase(BaseFeatureCase):
 
         ]
 
-        down_ifaces = ['FortyGigE1/0/2', 'FortyGigE1/0/1', 'FortyGigE1/0/3', 'FortyGigE1/0/4']
-        up_ifaces = []
+        down_ifaces = set(['FortyGigE1/0/2', 'FortyGigE1/0/1', 'FortyGigE1/0/3', 'FortyGigE1/0/4'])
+        up_ifaces = set()
 
         self.irf_port.build('1', ['FortyGigE1/0/1', 'FortyGigE1/0/2'], ['FortyGigE1/0/3', 'FortyGigE1/0/4'], [], [])
 

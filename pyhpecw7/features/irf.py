@@ -83,7 +83,7 @@ class IrfPort(object):
         updown_ifaces += list(set(old_p2).difference(irf_p2))
         updown_ifaces += list(set(irf_p2).difference(old_p2))
 
-        self._build_iface_updown(updown_ifaces, 'down')
+        self._build_iface_updown(set(updown_ifaces), 'down')
 
         EN = nc_element_maker()
         EC = config_element_maker()
@@ -126,7 +126,7 @@ class IrfPort(object):
         )
 
         self.device.stage_config(config, 'edit_config')
-        self._build_iface_updown(irf_p1 + irf_p2, 'up')
+        self._build_iface_updown(set(irf_p1 + irf_p2), 'up')
 
         self.device.stage_config(filename, 'save')
 
