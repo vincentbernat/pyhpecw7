@@ -8,7 +8,7 @@ setup(
   description='Python package to simplify working with HPE Comware7 Based devices ',
   author='HPE',
   license='Apache2',
-  url='https://github.com/hpenetworking/pyhpecw7',
+  url='https://github.com/vincentbernat/pyhpecw7',
   classifiers=[
         # How mature is this project? Common values are
         #   3 - Alpha

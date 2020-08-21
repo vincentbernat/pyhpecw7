@@ -1,3 +1,11 @@
+This project is a fork of [HPENetworking/pyhpecw7][]. The most notable
+change is the compatibility with Python 3. The original project is
+unfortunately inactive. As soon as the situation changes, the changes
+included in this fork will be proposed upstream and, hopefully, this
+fork will be terminated.
+
+[HPENetworking/pyhpecw7]: https://github.com/HPENetworking/pyhpecw7
+
 # Introduction
 
 This library was built to simplify working with HP Comware 7 switches
