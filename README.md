@@ -4,6 +4,11 @@ unfortunately inactive. As soon as the situation changes, the changes
 included in this fork will be proposed upstream and, hopefully, this
 fork will be terminated.
 
+![Build status](https://img.shields.io/github/workflow/status/vincentbernat/pyhpecw7/Tests)
+[![PyPI](https://img.shields.io/pypi/v/py3hpecw7.svg)](https://pypi.python.org/pypi/py3hpecw7)
+![PyPI versions](https://img.shields.io/pypi/pyversions/py3hpecw7.svg)
+[![Documentation](https://img.shields.io/readthedocs/py3hpecw7)](http://py3hpecw7.readthedocs.io/)
+
 [HPENetworking/pyhpecw7]: https://github.com/HPENetworking/pyhpecw7
 
 # Introduction
@@ -185,9 +190,3 @@ True
 >>> interface.get_config()
 {'admin': 'down', 'duplex': 'auto', 'speed': 'auto', 'description': 'TEST_DESCR', 'type': 'switched'}
 ```
-
-
-# Detailed Docs
-
-The detailed documentation for the library can be found
-[here](http://pyhpecw7.readthedocs.org/en/latest/index.html#)
