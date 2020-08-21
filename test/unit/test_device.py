@@ -29,7 +29,7 @@ class HPCOM7TestCase(unittest.TestCase):
     @mock.patch('pyhpecw7.comware.manager', autospec=True)
     def test_open(self, mock_manager):
         self.device.open()
-        mock_manager.connect.assert_called_with(allow_agent=False,
+        mock_manager.connect.assert_called_with(allow_agent=True,
                                                 device_params={'name': 'hpcomware'},
                                                 host='host',
                                                 hostkey_verify=False,

@@ -64,7 +64,7 @@ class HPCOM7(object):
 
     def open(self,
              hostkey_verify=False,
-             allow_agent=False,
+             allow_agent=True,
              look_for_keys=False):
         """Open the NETCONF connection to the HP switch.
 
