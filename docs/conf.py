@@ -39,7 +39,8 @@ if not on_rtd:
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
-    'sphinxcontrib.napoleon'
+    'sphinxcontrib.napoleon',
+    'm2r'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
