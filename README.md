@@ -6,12 +6,11 @@ fork will be terminated.
 
 ![Build status](https://img.shields.io/github/workflow/status/vincentbernat/pyhpecw7/Tests)
 [![PyPI](https://img.shields.io/pypi/v/py3hpecw7.svg)](https://pypi.python.org/pypi/py3hpecw7)
-![PyPI versions](https://img.shields.io/pypi/pyversions/py3hpecw7.svg)
 [![Documentation](https://img.shields.io/readthedocs/py3hpecw7)](http://py3hpecw7.readthedocs.io/)
 
 [HPENetworking/pyhpecw7]: https://github.com/HPENetworking/pyhpecw7
 
-# Introduction
+# HP Comware 7 Python SDK
 
 This library was built to simplify working with HP Comware 7 switches
 that have a NETCONF API. Rather than to have network developers worry
@@ -23,7 +22,7 @@ Before getting started, it's important to understand the high level
 workflow required when using this library, which again, is meant to be
 fairly straight forward and simple.
 
-### Step 1 - Create HPCOM7 object for each HP switch being managed
+## Step 1 - Create HPCOM7 object for each HP switch being managed
 
 ```
 >>> from pyhpecw7.comware import HPCOM7
@@ -31,14 +30,14 @@ fairly straight forward and simple.
 >>> device = HPCOM7(**args)
 ```
 
-### Step 2 - Open a Connection to the Device
+## Step 2 - Open a Connection to the Device
 
 ```
 >>> device.open()
 <ncclient.manager.Manager object at 0x7fa5088f98d0>
 ```
 
-### Step 3a - Get Config Data
+## Step 3a - Get Config Data
 
 Nearly all features supported such as `Vlan`, which is used in an
 example below, have a `get_config()` method.
@@ -50,7 +49,7 @@ doesn't it's an empty dictionary.
 
 Examples are below.
 
-### Step 3b - Configure the Device
+## Step 3b - Configure the Device
 
 Maybe you don't want to get any data, but rather want to make a
 configuration change.
