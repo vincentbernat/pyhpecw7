@@ -24,7 +24,7 @@ fairly straight forward and simple.
 
 ## Step 1 - Create HPCOM7 object for each HP switch being managed
 
-```
+```pycon
 >>> from pyhpecw7.comware import HPCOM7
 >>> args = dict(host='hp1', username='hp', password='hp123')
 >>> device = HPCOM7(**args)
@@ -32,7 +32,7 @@ fairly straight forward and simple.
 
 ## Step 2 - Open a Connection to the Device
 
-```
+```pycon
 >>> device.open()
 <ncclient.manager.Manager object at 0x7fa5088f98d0>
 ```
@@ -81,7 +81,7 @@ Examples are below.
 
 ## Initialize and Open Connection to the Device
 
-```
+```pycon
 >>> from pyhpecw7.comware import HPCOM7
 >>> args = dict(host='hp1', username='hp', password='hp123')
 >>> device = HPCOM7(**args)
@@ -93,7 +93,7 @@ Examples are below.
 
 ### Get VLAN Information
 
-```
+```pycon
 >>> from pyhpecw7.features.vlan import Vlan
 >>> vlan = Vlan(device, '20')
 >>> vlan.get_config()
@@ -108,7 +108,7 @@ VLAN 20 did not exist on the switch, but VLAN 10 did.
 A VLAN object for any VLAN can also return all VLAN IDs that exist on
 the switch.
 
-```
+```pycon
 >>> vlan.get_vlan_list()
 ['1', '10']
 ```
@@ -117,13 +117,13 @@ the switch.
 
 Let's create a new VLAN object.
 
-```
+```pycon
 >>> vlan = Vlan(device, '20')
 ```
 
 Now add VLAN 20. To do this we'll use the `build` method.
 
-```
+```pycon
 >>> vlan.build(stage=True)
 True
 ```
@@ -133,7 +133,7 @@ pushed has successfully been staged.
 
 The next step is to execute the change.
 
-```
+```pycon
 >>> response = device.execute_staged()
 >>> vlan.get_config()
 {'name': 'VLAN 0020', 'vlanid': '20', 'descr': 'VLAN 0020'}
@@ -142,7 +142,7 @@ The next step is to execute the change.
 Setting the vlan name or description could easily be sent in as
 additional key value pairs (or with a dictionary) when using `build`.
 
-```
+```pycon
 >>> args = dict(name='NEWV20', descr='DESCR_20')
 >>> vlan.build(stage=True, **args)
 True
@@ -153,7 +153,7 @@ True
 
 To remove the VLAN, the `remove` method is used.
 
-```
+```pycon
 >>> vlan.remove(stage=True)
 True
 >>> rsp = device.execute_staged()
@@ -163,7 +163,7 @@ True
 
 ### Get Interface Information
 
-```
+```pycon
 >>> from pyhpecw7.features.interface import Interface
 >>> interface = Interface(device, 'FortyGigE1/0/4')
 >>> interface.get_config()
@@ -172,7 +172,7 @@ True
 
 ### Default an Interface
 
-```
+```pycon
 >>> interface.default(stage=True)
 True
 >>> response = device.execute_staged()
@@ -182,7 +182,7 @@ True
 
 ### Configure an Interface
 
-```
+```pycon
 >>> interface.build(stage=True, admin='down', description='TEST_DESCR')
 True
 >>> rsp = device.execute_staged()
