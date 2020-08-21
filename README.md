@@ -8,6 +8,12 @@ fork will be terminated.
 [![PyPI](https://img.shields.io/pypi/v/py3hpecw7.svg)](https://pypi.python.org/pypi/py3hpecw7)
 [![Documentation](https://img.shields.io/readthedocs/py3hpecw7)](http://py3hpecw7.readthedocs.io/)
 
+You can install this version with:
+
+```console
+$ pip install py3hpecw7
+```
+
 [HPENetworking/pyhpecw7]: https://github.com/HPENetworking/pyhpecw7
 
 # HP Comware 7 Python SDK
